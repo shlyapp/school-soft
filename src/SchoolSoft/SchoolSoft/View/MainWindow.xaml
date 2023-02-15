@@ -1,0 +1,48 @@
+﻿<Window x:Class="SchoolSoft.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolSoft"
+        mc:Ignorable="d"
+        Title="База данных школы" Height="600" Width="900"
+        Background="#F5F5F5">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    Background="#1C3570">
+            <Rectangle Style="{DynamicResource menuElement}"/>
+            <TextBlock Text="Предметы"
+                       Style="{DynamicResource menuElementText}">
+                <TextBlock.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding ShowSubjectsPage}"/>
+                </TextBlock.InputBindings>
+            </TextBlock>
+
+            <Rectangle Style="{DynamicResource menuElement}"/>
+            <TextBlock Text="Преподаватели"
+                       Style="{DynamicResource menuElementText}">
+                <TextBlock.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding ShowTeachers}"/>
+                </TextBlock.InputBindings>
+            </TextBlock>
+
+            <Rectangle Style="{DynamicResource menuElement}"/>
+            <TextBlock Text="Студенты"
+                       Style="{DynamicResource menuElementText}">
+                <TextBlock.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding ShowStudentsPage}"/>
+                </TextBlock.InputBindings>
+            </TextBlock>
+        </StackPanel>
+
+        <Frame Grid.Column="1"
+               Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"
+               Opacity="{Binding FrameOpacity, UpdateSourceTrigger=PropertyChanged}"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
