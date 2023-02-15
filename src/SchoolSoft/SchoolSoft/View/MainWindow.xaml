@@ -24,7 +24,7 @@
             </TextBlock>
 
             <Rectangle Style="{DynamicResource menuElement}"/>
-            <TextBlock Text="Преподаватели"
+            <TextBlock Text="Учителя"
                        Style="{DynamicResource menuElementText}">
                 <TextBlock.InputBindings>
                     <MouseBinding MouseAction="LeftClick" Command="{Binding ShowTeachers}"/>
@@ -32,7 +32,7 @@
             </TextBlock>
 
             <Rectangle Style="{DynamicResource menuElement}"/>
-            <TextBlock Text="Студенты"
+            <TextBlock Text="Ученики"
                        Style="{DynamicResource menuElementText}">
                 <TextBlock.InputBindings>
                     <MouseBinding MouseAction="LeftClick" Command="{Binding ShowStudentsPage}"/>
